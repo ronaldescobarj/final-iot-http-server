@@ -46,6 +46,6 @@ app.get('/', (req, res) => {
     res.send("Hola mundo");
 })
 
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
     console.log('Server corriendo');
 });
