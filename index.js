@@ -1,7 +1,8 @@
 var admin = require("firebase-admin");
 var express = require('express');
+var cors = require('cors')
 var app = express();
-
+app.use(cors());
 var serviceAccount = require("./final-iot-3059e-firebase-adminsdk-aokfo-1afd04a985.json");
 
 admin.initializeApp({
