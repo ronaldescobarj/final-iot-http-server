@@ -31,7 +31,7 @@ var options = {
 //         console.log("Error sending message:", error);
 //     });
 
-app.post('/', function (req, res) {
+app.post('/timbre', function (req, res) {
     admin.messaging().send(payload)
         .then(function (response) {
             console.log("Successfully sent message:", response);
