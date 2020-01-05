@@ -1,13 +1,13 @@
-var admin = require("firebase-admin");
+// var admin = require("firebase-admin");
 var express = require('express');
 var app = express();
 
-var serviceAccount = require("./final-iot-3059e-firebase-adminsdk-aokfo-1afd04a985.json");
+// var serviceAccount = require("./final-iot-3059e-firebase-adminsdk-aokfo-1afd04a985.json");
 
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://final-iot-3059e.firebaseio.com"
-});
+// admin.initializeApp({
+//     credential: admin.credential.cert(serviceAccount),
+//     databaseURL: "https://final-iot-3059e.firebaseio.com"
+// });
 
 var registrationToken = "<registration token goes here>";
 
@@ -31,16 +31,16 @@ var options = {
 //         console.log("Error sending message:", error);
 //     });
 
-app.post('/timbre', function (req, res) {
-    admin.messaging().send(payload)
-        .then(function (response) {
-            console.log("Successfully sent message:", response);
-        })
-        .catch(function (error) {
-            console.log("Error sending message:", error);
-        });
-    res.send('Success!');
-});
+// app.post('/timbre', function (req, res) {
+//     admin.messaging().send(payload)
+//         .then(function (response) {
+//             console.log("Successfully sent message:", response);
+//         })
+//         .catch(function (error) {
+//             console.log("Error sending message:", error);
+//         });
+//     res.send('Success!');
+// });
 
 app.get('/', (req, res) => {
     res.send("Hola mundo");
