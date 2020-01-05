@@ -42,6 +42,10 @@ app.post('/', function (req, res) {
     res.send('Success!');
 });
 
+app.get('/', (req, res) => {
+    res.send("Hola mundo");
+})
+
 app.listen(3000, function () {
     console.log('Server corriendo');
 });
