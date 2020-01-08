@@ -10,7 +10,7 @@ admin.initializeApp({
     databaseURL: "https://final-iot-3059e.firebaseio.com"
 });
 
-var registrationToken = "dbeRQk-3EUM:APA91bHVIo_cLjaO8GRqqI-xFbeshrhqmhYINuVyoZsuqw4Ke00JwxDyWEEam6OhVaju66Y-r4kgyJM-HW4kT6o00DwGThwK7fJdGZNiS8pggzm6ZOvnyUvmHXtMcug8XPuvoqEoRuaj";
+var registrationToken = "duw3rx0XJf8:APA91bEymSGVyoPKIZJ3ZM1QD8HYSc2q9z8ICCQ9JujUzNnGApR5niY_bkA3a5m1pDZu9NTkDr5rnktdQVzPDWEIQ3CqFAwKCfc1mmDObm00P6U6j-OHGt49uVbykAgms2Cu1mVlx-Ha";
 
 var payload = {
     notification: {
@@ -25,15 +25,7 @@ var options = {
 };
 
 
-
 app.post('/timbre', function (req, res) {
-    // admin.messaging().send(payload)
-    //     .then(function (response) {
-    //         console.log("Successfully sent message:", response);
-    //     })
-    //     .catch(function (error) {
-    //         console.log("Error sending message:", error);
-    //     });
     admin.messaging().sendToDevice(registrationToken, payload, options)
         .then(function (response) {
             console.log("Successfully sent message:", response);
